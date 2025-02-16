@@ -452,7 +452,7 @@ class image_imagick implements imageInterface
   function __construct($source_filepath)
   {
     // A bug cause that Imagick class can not be extended
-    $this->image = new Imagick($source_filepath);
+    $this->image = new Imagick(__DIR__ . DIRECTORY_SEPARATOR . '../../' . $source_filepath);
   }
 
   function get_width()
@@ -531,7 +531,7 @@ class image_imagick implements imageInterface
   {
     // use 4:2:2 chroma subsampling (reduce file size by 20-30% with "almost" no human perception)
     $this->image->setSamplingFactors( array(2,1) );
-    return $this->image->writeImage($destination_filepath);
+    return $this->image->writeImage(__DIR__ . DIRECTORY_SEPARATOR . '../../' . $destination_filepath);
   }
 }
 
