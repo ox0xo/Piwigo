@@ -159,6 +159,7 @@ function get_sync_metadata($infos)
 {
   global $conf;
   $file = PHPWG_ROOT_PATH.$infos['path'];
+  $file = '../' . $file;
   $fs = @filesize($file);
 
   if ($fs===false)
