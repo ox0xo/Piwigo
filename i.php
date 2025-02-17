@@ -178,6 +178,7 @@ function parse_request()
   }
 
   $req = ltrim($req, '/');
+  $req = explode('?', $req)[0];
 
   foreach (preg_split('#/+#', $req) as $token)
   {
